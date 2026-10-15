@@ -1,0 +1,248 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #eef2ff, #f8faff, #e0e7ff);
+    color: #1e293b;
+    min-height: 100vh;
+    padding: 25px 20px 50px;
+}
+
+/* Website Name */
+body > p {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #4338ca;
+    margin: 10px 0 35px;
+}
+
+/* Main Section */
+.section {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+/* About Card */
+.bero {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 45px rgba(30, 41, 59, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.15);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    animation: fadeIn 0.8s ease;
+}
+
+.bero:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 22px 55px rgba(79, 70, 229, 0.18);
+}
+
+/* Article Layout */
+article {
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    grid-template-areas:
+        "heading heading"
+        "image content";
+    gap: 25px 40px;
+    align-items: center;
+}
+
+/* Main Heading */
+article h1 {
+    grid-area: heading;
+    text-align: center;
+    font-size: 38px;
+    font-weight: 800;
+    color: #312e81;
+    margin-bottom: 8px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+article h1::after {
+    content: "";
+    display: block;
+    width: 85px;
+    height: 4px;
+    background: linear-gradient(90deg, #6366f1, #ec4899);
+    border-radius: 10px;
+    margin: 12px auto 0;
+}
+
+/* About Image */
+article img {
+    grid-area: image;
+    width: 100%;
+    max-width: 350px;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: 5px solid #eef2ff;
+    box-shadow: 0 10px 28px rgba(79, 70, 229, 0.18);
+    transition: transform 0.4s ease;
+}
+
+article img:hover {
+    transform: scale(1.035);
+}
+
+/* Content Area */
+article content {
+    grid-area: content;
+    display: block;
+}
+
+/* Welcome Heading */
+content h4 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #4f46e5;
+    margin-bottom: 18px;
+}
+
+/* Paragraphs */
+content p {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.9;
+    color: #475569;
+    margin-bottom: 16px;
+    text-align: justify;
+}
+
+/* Thank You Message */
+content h5 {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 11px 18px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #eef2ff, #fce7f3);
+    color: #4338ca;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.7;
+}
+
+/* Entry Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tablet Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 20px 15px 35px;
+    }
+
+    body > p {
+        font-size: 21px;
+        margin-bottom: 25px;
+    }
+
+    article {
+        padding: 28px;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "heading"
+            "image"
+            "content";
+        gap: 22px;
+    }
+
+    article h1 {
+        font-size: 32px;
+    }
+
+    article img {
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
+    }
+
+    content h4 {
+        font-size: 21px;
+        text-align: center;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    body {
+        padding: 16px 12px 25px;
+    }
+
+    body > p {
+        font-size: 18px;
+        letter-spacing: 0;
+        margin-bottom: 22px;
+    }
+
+    .bero {
+        border-radius: 18px;
+    }
+
+    article {
+        padding: 22px 18px;
+        gap: 20px;
+    }
+
+    article h1 {
+        font-size: 28px;
+    }
+
+    article img {
+        max-width: 240px;
+        height: 240px;
+        border-radius: 16px;
+    }
+
+    content h4 {
+        font-size: 19px;
+    }
+
+    content p {
+        font-size: 14px;
+        line-height: 1.8;
+        text-align: left;
+    }
+
+    content h5 {
+        font-size: 13px;
+    }
+}
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
